@@ -25,9 +25,12 @@
 <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="4" cy="10" r="1.6"/><circle cx="10" cy="10" r="1.6"/><circle cx="16" cy="10" r="1.6"/></svg>
 </button>
 <div class="menu" id="menu" hidden>
+<button id="menu-test">Play a test sound</button>
+<button id="menu-diag">Diagnostics</button>
 <button id="menu-trusted">Remembered devices</button>
 <button id="menu-clear">Clear unfinished transfers</button>
 <a href="classic.html">Send by sound only (no network)</a>
+<span class="build" id="build"></span>
 </div>
 </div>
 </header>
@@ -54,6 +57,7 @@
 <button class="listen" id="listen" aria-pressed="false">
 <span class="dot"></span><span id="listen-text">Receive</span>
 </button>
+<div class="meter" id="meter" hidden title="What the microphone hears"><i id="meter-fill"></i></div>
 <p class="fine" id="fine"></p>
 </footer>
 </div>
