@@ -1,0 +1,52 @@
+{
+  "name": "SDT · Sound Driven Transfer",
+  "short_name": "SDT",
+  "description": "Send files to a device nearby. Sound finds and checks it; the files go directly, encrypted.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f5f0",
+  "theme_color": "#7d37e0",
+  "share_target": {
+    "action": "share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "*/*",
+            "image/*",
+            "video/*",
+            "audio/*",
+            "text/*",
+            "application/*"
+          ]
+        }
+      ]
+    }
+  },
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

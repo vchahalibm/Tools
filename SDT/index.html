@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SDT · Sound Driven Transfer</title>
+<meta name="description" content="Send files to a device nearby. Sound finds and checks it; the files go over Wi-Fi.">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1d1c1a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SDT">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="css/sdt.css">
+</head>
+<body>
+<div class="page">
+<header class="top">
+<a class="brand" href="./"><img src="icons/icon.svg" alt="" width="30" height="30"><span>SDT</span></a>
+<div class="top-right">
+<button class="chip" id="me" title="This device’s name"></button>
+<button class="icon-btn" id="menu-btn" aria-label="More" aria-haspopup="true" aria-expanded="false">
+<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="4" cy="10" r="1.6"/><circle cx="10" cy="10" r="1.6"/><circle cx="16" cy="10" r="1.6"/></svg>
+</button>
+<div class="menu" id="menu" hidden>
+<button id="menu-trusted">Remembered devices</button>
+<button id="menu-clear">Clear unfinished transfers</button>
+<a href="classic.html">Send by sound only (no network)</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero" id="hero">
+<h1>Send files to a device nearby</h1>
+<p>A short sound finds the other device and checks it is the right one. The files then travel directly between the two, encrypted.</p>
+</section>
+<section class="thread" id="thread" aria-live="polite"></section>
+</main>
+<footer class="dock">
+<div class="composer" id="composer">
+<ul class="staged" id="staged"></ul>
+<div class="composer-row">
+<div class="adders">
+<label class="ghost"><input type="file" id="pick-files" multiple>Files</label>
+<label class="ghost" id="folder-label"><input type="file" id="pick-folder" webkitdirectory multiple>Folder</label>
+<button class="ghost" id="paste">Paste</button>
+</div>
+<span class="drop-hint" id="drop-hint">or drop them here</span>
+<button class="primary" id="send" disabled>Send</button>
+</div>
+</div>
+<button class="listen" id="listen" aria-pressed="false">
+<span class="dot"></span><span id="listen-text">Receive</span>
+</button>
+<p class="fine" id="fine"></p>
+</footer>
+</div>
+<dialog id="sheet">
+<form method="dialog">
+<h2 id="sheet-title"></h2>
+<div id="sheet-body"></div>
+<div class="sheet-actions"><button class="primary" value="ok">Done</button></div>
+</form>
+</dialog>
+<script type="module" src="js/sdt.js"></script>
+</body>
+</html>
